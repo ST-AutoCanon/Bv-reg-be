@@ -424,8 +424,8 @@ const TractionBatterypackSchema = mongoose.Schema({
       },
       Battery_Energy: {
         value: { type: String, default: "" },
-        label: { type: String, default: "Battery Energy (kWh)" },
-        units: { type: String, default: "kWh" },
+        label: { type: String, default: "Battery Energy (KWh)" },
+        units: { type: String, default: "KWh" },
       },
       Battery_Capacity: {
         value: { type: String, default: "" },
