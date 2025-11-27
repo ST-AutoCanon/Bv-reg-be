@@ -78,11 +78,11 @@ const TyresSchema = mongoose.Schema({
   Rear_Tyre: {
     label: { type: String, default: "Rear Tyre" },
     properties: {
-      Laden: {
-        value: { type: String, default: "" },
-        label: { type: String, default: " Rear Laden" },    
-        units: { type: String, default: "kg/cm² /kPa/ psi" },   
-      },
+      // Laden: {
+      //   value: { type: String, default: "" },
+      //   label: { type: String, default: " Rear Laden" },    
+      //   units: { type: String, default: "kg/cm² /kPa/ psi" },   
+      // },
       Tyre_size_designation_including_ply_rating: {
         value: { type: String, default: "" },
         label: {
@@ -104,6 +104,28 @@ const TyresSchema = mongoose.Schema({
       },   
     },
   },
+  // Any_other_Tyre: {
+  //   label: { type: String, default: "Any Other Tyre" },
+  //   properties: {
+  //     Make: {
+  //       value: { type: String, default: "" },
+  //       label: { type: String, default: "Make of the Tyre" },
+        
+  //     },
+  //     TAC_Number_Its_Validity: {
+  //       value: { type: String, default: "" },
+  //       label: { type: String, default: "TAC Number / BIS License and its Validity" },
+      
+  //     },
+  //     Possible_date_of_submission_of_required_approval: {
+  //       value: { type: String, default: "" },
+  //       label: {
+  //         type: String,
+  //         default: "Possible date of submission of required approval, if the Certification is in process",
+  //       },
+  //     },
+  //   }
+  //   }
 });
 
 const WheelRimSchema = mongoose.Schema({
@@ -514,11 +536,11 @@ const SteeringSuspensionSchema = mongoose.Schema({
         value: { type: String, default: "" },
         label: { type: String, default: " Front Type / Description" },       
       },
-      Type_of_springs_provided_at_front_and_Rear: {
+      Type_of_springs_provided_at_Front: {
         value: { type: String, default: "" },
         label: {
           type: String,
-          default: "Type of springs provided at front",
+          default: "Type of springs provided at Front",
         },
         
       },
@@ -527,11 +549,11 @@ const SteeringSuspensionSchema = mongoose.Schema({
         label: { type: String, default: "Anti-roll bar if provided" },
        
       },
-      Type_of_Shock_absorbers_provided_at_the_front_and_Rear: {
+      Type_of_Shock_absorbers_provided_at_the_Front: {
         value: { type: String, default: "" },
         label: {
           type: String,
-          default: "Type of Shock absorbers provided at the front",
+          default: "Type of Shock absorbers provided at the Front",
         },
        
       },
@@ -545,7 +567,7 @@ const SteeringSuspensionSchema = mongoose.Schema({
         label: { type: String, default: " Rear Type / Description" },
        
       },
-      Type_of_springs_provided_at_front_and_Rear: {
+      Type_of_springs_provided_at_Rear: {
         value: { type: String, default: "" },
         label: {
           type: String,
@@ -558,7 +580,7 @@ const SteeringSuspensionSchema = mongoose.Schema({
         label: { type: String, default: "Anti-roll bar if provided" },
 
       },
-      Type_of_Shock_absorbers_provided_at_the_front_and_Rear: {
+      Type_of_Shock_absorbers_provided_at_the_Rear: {
         value: { type: String, default: "" },
         label: {
           type: String,
@@ -608,11 +630,11 @@ const SuspensionSchema = mongoose.Schema({
         value: { type: String, default: "" },
         label: { type: String, default: " Front Type / Description" },       
       },
-      Type_of_springs_provided_at_front_and_Rear: {
+      Type_of_springs_provided_at_Front: {
         value: { type: String, default: "" },
         label: {
           type: String,
-          default: "Type of springs provided at front and Rear",
+          default: "Type of springs provided at Front ",
         },
         
       },
@@ -621,11 +643,11 @@ const SuspensionSchema = mongoose.Schema({
         label: { type: String, default: "Anti-roll bar if provided" },
        
       },
-      Type_of_Shock_absorbers_provided_at_the_front_and_Rear: {
+      Type_of_Shock_absorbers_provided_at_the_Front: {
         value: { type: String, default: "" },
         label: {
           type: String,
-          default: "Type of Shock absorbers provided at the front and Rear",
+          default: "Type of Shock absorbers provided at the Front",
         },
        
       },
@@ -639,11 +661,11 @@ const SuspensionSchema = mongoose.Schema({
         label: { type: String, default: " Rear Type / Description" },
        
       },
-      Type_of_springs_provided_at_front_and_Rear: {
+      Type_of_springs_provided_at_Rear: {
         value: { type: String, default: "" },
         label: {
           type: String,
-          default: "Type of springs provided at front and Rear",
+          default: "Type of springs provided at Rear",
         },
      
       },
@@ -652,11 +674,11 @@ const SuspensionSchema = mongoose.Schema({
         label: { type: String, default: "Anti-roll bar if provided" },
 
       },
-      Type_of_Shock_absorbers_provided_at_the_front_and_Rear: {
+      Type_of_Shock_absorbers_provided_at_the_Rear: {
         value: { type: String, default: "" },
         label: {
           type: String,
-          default: "Type of Shock absorbers provided at the front and Rear",
+          default: "Type of Shock absorbers provided at the Rear",
         },
 
       },

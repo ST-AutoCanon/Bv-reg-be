@@ -31,6 +31,7 @@ const TyresData = async (supplierId, form7) => {
     },
     // Front_Tyre: {},
     Rear_Tyre: {},
+    // Any_other_Tyre:{},
   };
   console.log(
     `creating data: ${JSON.stringify(TyreData)} data for form7: ${form7._id}`
@@ -506,6 +507,20 @@ exports.updateForm7Data = async (requestId, data) => {
         }
       );
     }
+    // if (data.Any_other_Tyre) {
+    //   updatedForm7Data = await form7Schema.findByIdAndUpdate(
+    //     form7._id,
+    //     {
+    //       $set: {
+    //         "Tyres.TyresData.$[tyresData].Any_other_Tyre": data.Any_other_Tyre,
+    //       },
+    //     },
+    //     {
+    //       arrayFilters: [{ "tyresData._id": data._id }],
+    //       returnDocument: "after",
+    //     }
+    //   );
+    // }
 
     if (data.Wheel_Rim_Size) {
       updatedForm7Data = await form7Schema.findByIdAndUpdate(

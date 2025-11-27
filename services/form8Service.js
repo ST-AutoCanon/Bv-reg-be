@@ -591,16 +591,33 @@ exports.updateForm8Data = async (requestId, data) => {
         { arrayFilters: [{ "tyresData._id": data._id }], returnDocument: "after" }
       )
     }
-    if (data.Traction_Battery_Pack) {
+    // if (data.Traction_Battery_Pack) {
+    //   updatedform8Data = await form8Schema.findByIdAndUpdate(
+    //     form8._id,
+    //     {
+    //       $set: {
+    //         "Traction_Battery_Pack.TractionBatterypack.$[tractionBatterypack].Traction_Battery_Pack": data.Traction_Battery_Pack,
+    //       },
+    //     },
+    //     { arrayFilters: [{ "tractionBatterypack._id": data._id }], returnDocument: "after" }
+    //   )
+    // }
+
+     if (data.Traction_Battery_Pack) {
       updatedform8Data = await form8Schema.findByIdAndUpdate(
         form8._id,
         {
           $set: {
-            "Traction_Battery_Pack.TractionBatterypack.$[tractionBatterypack].Traction_Battery_Pack": data.Traction_Battery_Pack,
+            // ❌ Skip Make & TAC_Number
+            "Traction_Battery_Pack.TractionBatterypack.$[tractionBatterypack].Traction_Battery_Pack.properties.Type_approval_Certififcate_number.value": data.Traction_Battery_Pack.properties.Type_approval_Certififcate_number.value,
+            "Traction_Battery_Pack.TractionBatterypack.$[tractionBatterypack].Traction_Battery_Pack.properties.Possible_date_of_submission_of_required_approval.value": data.Traction_Battery_Pack.properties.Possible_date_of_submission_of_required_approval.value,
+            "Traction_Battery_Pack.TractionBatterypack.$[tractionBatterypack].Traction_Battery_Pack.properties.CoP_Cert_No_with_validity_date.value": data.Traction_Battery_Pack.properties.CoP_Cert_No_with_validity_date.value,
           },
         },
+
+
         { arrayFilters: [{ "tractionBatterypack._id": data._id }], returnDocument: "after" }
-      )
+      );
     }
 
     // if (data.Main_Beam_Head_Lamp_LED_type) {
@@ -1067,16 +1084,35 @@ exports.updateForm8Data = async (requestId, data) => {
     }
     
 
-    if (data.Front_White_Reflector) {
+    // if (data.Front_White_Reflector) {
+    //   updatedform8Data = await form8Schema.findByIdAndUpdate(
+    //     form8._id,
+    //     {
+    //       $set: {
+    //         "Retro_Reflectors.RetroReflectors.$[retroReflectors].Front_White_Reflector": data.Front_White_Reflector,
+    //       },
+    //     },
+    //     { arrayFilters: [{ "retroReflectors._id": data._id }], returnDocument: "after" }
+    //   )
+    // }
+
+     if (data.Front_White_Reflector) {
       updatedform8Data = await form8Schema.findByIdAndUpdate(
         form8._id,
         {
           $set: {
-            "Retro_Reflectors.RetroReflectors.$[retroReflectors].Front_White_Reflector": data.Front_White_Reflector,
+            // "Retro_Reflectors.RetroReflectors.$[retroReflector].Front_White_Reflector.properties.TAC_Number.value":
+            //   data.Front_White_Reflector.properties.TAC_Number.value,
+               "Retro_Reflectors.RetroReflectors.$[retroReflector].Front_White_Reflector.properties.TAC_Validity.value":
+              data.Front_White_Reflector.properties.TAC_Validity.value,
+            "Retro_Reflectors.RetroReflectors.$[retroReflector].Front_White_Reflector.properties.Possible_date_of_submission_of_required_approval.value":
+              data.Front_White_Reflector.properties.Possible_date_of_submission_of_required_approval.value,
+            "Retro_Reflectors.RetroReflectors.$[retroReflector].Front_White_Reflector.properties.CoP_Cert_No_with_validity_date.value":
+              data.Front_White_Reflector.properties.CoP_Cert_No_with_validity_date.value,
           },
         },
-        { arrayFilters: [{ "retroReflectors._id": data._id }], returnDocument: "after" }
-      )
+        { arrayFilters: [{ "retroReflector._id": data._id }], returnDocument: "after" }
+      );
     }
     // if (data.Rear_Red_Reflector) {
     //   updatedform8Data = await form8Schema.findByIdAndUpdate(
