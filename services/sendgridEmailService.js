@@ -4,9 +4,9 @@ const RESET_PASSWORD = process.env.RESET_PASSWORD
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 exports.sendUserRegistrationMail = async (emailId, username, tempPassword) => {
-  console.log(`sending user registration email to user: ${username}`)
+  // console.log(`sending user registration email to user: ${username}`)
   const pwdResetLink = `${NEW_SIGNIN_URL}?name=${username}&pass=${tempPassword}`
-  console.log(`pwdResetLink: ${pwdResetLink}`)
+  // console.log(`pwdResetLink: ${pwdResetLink}`)
   const msg = {
     to: emailId, // Change to your recipient
     from: "hr@sukalpatechsolutions.com", // Change to your verified sender
@@ -17,7 +17,7 @@ exports.sendUserRegistrationMail = async (emailId, username, tempPassword) => {
   sgMail
     .send(msg)
     .then(() => {
-      console.log(`user registration mail email sent to user: ${emailId}`)
+      // console.log(`user registration mail email sent to user: ${emailId}`)
       return true
     })
     .catch((error) => {
@@ -27,9 +27,9 @@ exports.sendUserRegistrationMail = async (emailId, username, tempPassword) => {
 }
 
 exports.sendForgotPasswordMail = async (emailId, username, tempPassword) => {
-  console.log(`sending new password email to user: ${username}`)
+  // console.log(`sending new password email to user: ${username}`)
   const forgotPwdLink = `${RESET_PASSWORD}?name=${username}&pass=${tempPassword}`
-  console.log(`forgotPwdLink: ${forgotPwdLink}`)
+  // console.log(`forgotPwdLink: ${forgotPwdLink}`)
   const msg = {
     to: emailId, // Change to your recipient
     from: "hr@sukalpatechsolutions.com", // Change to your verified sender
@@ -40,7 +40,7 @@ exports.sendForgotPasswordMail = async (emailId, username, tempPassword) => {
   sgMail
     .send(msg)
     .then(() => {
-      console.log(`Forgot password email sent to user: ${emailId}`)
+      // console.log(`Forgot password email sent to user: ${emailId}`)
       return true
     })
     .catch((error) => {

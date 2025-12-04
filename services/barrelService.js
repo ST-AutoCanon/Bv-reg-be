@@ -53,25 +53,10 @@ const submitBarrelData1 = async ({
 };
 
 
-
-
-
-// const getAllBarrelsForUser = async (username) => {
-//   // const getAllBarrelsForUser = async () => {
-//   // console.log('userIDsdfsd:',userId)
-//   try {
-//     const barrels = await Barrel.find({ submittedBy: username });
-//     // const barrels = await Barrel.find();
-//     return barrels;
-//   } catch (error) {
-//     throw new Error("Unable to fetch barrel data.");
-//   }
-// };
-
 const getAllBarrelsForUser = async (finalOutputPrefix) => {
   try {
     const barrels = await Barrel.find({ finalOutput: { $regex: `^${finalOutputPrefix}-`, $options: "i" } });
-    console.log('barrels:',barrels);
+    // console.log('barrels:',barrels);
     return barrels;
   } catch (error) {
     throw new Error("Unable to fetch barrel data.");

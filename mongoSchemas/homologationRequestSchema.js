@@ -86,7 +86,7 @@ const homologationRequestSchema = mongoose.Schema(
 
 
 homologationRequestSchema.pre("validate", async function (next) {
-  console.log("inside homologationRequestSchema.pre method")
+  // console.log("inside homologationRequestSchema.pre method")
   const doc = this
   let reqnumberPrefix
   if (doc.isNew) {
@@ -108,7 +108,7 @@ homologationRequestSchema.pre("validate", async function (next) {
     const currentYear = new Date().getFullYear()
     const count = await mongoose.model("HomologationRequest").estimatedDocumentCount()
     const requestNumber = count ? `${reqnumberPrefix}-${currentYear}-${count + 1}` : `${reqnumberPrefix}-${currentYear}-1`
-    console.log(`requestNumber: ${requestNumber}`)
+    // console.log(`requestNumber: ${requestNumber}`)
     doc.request_number = requestNumber
   }
   next()

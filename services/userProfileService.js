@@ -32,7 +32,7 @@ exports.createUserProfile = async (userRegistrationReq) => {
       alternateContact: userRegistrationReq.profileAddress.alternateContact,
     },
   }
-  console.log(`creating a new user profile: ${JSON.stringify(userProfilePayload)}`)
+  // console.log(`creating a new user profile: ${JSON.stringify(userProfilePayload)}`)
   const newUserProfile = await UserProfile.create(userProfilePayload)
   if(newUserProfile != null) {
     const { username, emailId} = newUserProfile

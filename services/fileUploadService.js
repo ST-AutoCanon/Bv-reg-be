@@ -11,7 +11,7 @@ exports.getFileUploadRequestId = async (requestId) => {
     }
     return null
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    // console.log(`Exception occured: ${error}`)
   }
 }
 
@@ -20,7 +20,7 @@ exports.uploadFileUploadRequestId = async (requestId, form, headerName, property
     let fileUploadData
     const updateObject = {} ;
     updateObject[`${form}Data.${headerName}.properties.${propertyName}.file_name`] = fileName;
-    console.log(`updateObject: ${JSON.stringify(updateObject)}`)
+    // console.log(`updateObject: ${JSON.stringify(updateObject)}`)
 
     fileUploadData = await fileUploadSchema.findByIdAndUpdate(
       requestId,
@@ -32,7 +32,7 @@ exports.uploadFileUploadRequestId = async (requestId, form, headerName, property
     }
     return null
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    // console.log(`Exception occured: ${error}`)
   }
 }
 
@@ -42,60 +42,46 @@ exports.uploadFileUploadRequestId = async (requestId, form, headerName, property
 
 exports.updateFooterData = async (requestId, data) => {
   try {
-    console.log(`requestId: ${requestId}, data: ${JSON.stringify(data.footerData.footer)}`)
+    // console.log(`requestId: ${requestId}, data: ${JSON.stringify(data.footerData.footer)}`)
 
     const fileUpload = await fileUploadSchema.findOne({ homologationRequest: requestId })
     let footerupdated;
     if(fileUpload != null && fileUpload.footerData != null){
       const footerDataToUpdate = data.footerData.footer;
-      console.log('footerDataToUpdate:',footerDataToUpdate);
+      // console.log('footerDataToUpdate:',footerDataToUpdate);
        footerupdated = await fileUploadSchema.findByIdAndUpdate(fileUpload._id, { 'footerData.footer': footerDataToUpdate }, { returnDocument: "after" })
            
     }
     if(fileUpload != null && fileUpload.footerData != null){
             const footerDataToUpdate = data.footerData.sealSign;
-            console.log('footerDataToUpdate:',footerDataToUpdate);
+            // console.log('footerDataToUpdate:',footerDataToUpdate);
              footerupdated = await fileUploadSchema.findByIdAndUpdate(fileUpload._id, { 'footerData.sealSign': footerDataToUpdate }, { returnDocument: "after" })
-             console.log('1234')
+            //  console.log('1234')
             //  console.log(`footerData: ${JSON.stringify(footerData)}`)
            
           }
 
     if(fileUpload != null && fileUpload.form11Data != null){
       const footerDataToUpdate = data.form11Data.diagrams;
-      console.log('footerDataToUpdate:',footerDataToUpdate);
+      // console.log('footerDataToUpdate:',footerDataToUpdate);
        footerupdated = await fileUploadSchema.findByIdAndUpdate(fileUpload._id, { 'form11Data.diagrams': footerDataToUpdate }, { returnDocument: "after" })
-       console.log('1234')
+      //  console.log('1234')
       //  console.log(`footerData: ${JSON.stringify(footerData)}`)
      
     }
-    console.log('footerUpdated data before retriving:',footerupdated)
+    // console.log('footerUpdated data before retriving:',footerupdated)
     return footerupdated
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    // console.log(`Exception occured: ${error}`)
   }
 }
-// exports.updateFooterData = async (requestId, data) => {
-//   try {
-//     console.log(`requestId: ${requestId}, data: ${JSON.stringify(data.footerData.footer)}`)
 
-//     const fileUpload = await fileUploadSchema.findOne({ homologationRequest: requestId })
-//     if(fileUpload != null && fileUpload.footerData != null){
-//       const footerDataToUpdate = data.footerData.footer;
-//       const footerData = await fileUploadSchema.findByIdAndUpdate(fileUpload._id, { 'footerData.footer': footerDataToUpdate }, { returnDocument: "after" })
-//       console.log(`footerData: ${JSON.stringify(footerData)}`)
-//       return footerData;
-//     }
-//   } catch (error) {
-//     console.log(`Exception occured: ${error}`)
-//   }
-// }
 
 exports.findOrCreateFileUpload = async (requestId) => {
-  console.log(`inside findOrCreateFileUpload`)
+  // console.log(`inside findOrCreateFileUpload`)
   let fileUpload = await fileUploadSchema.findOne({ homologationRequest: requestId })
     if (fileUpload == null) {
-      console.log(`creatng new fileUpload collection for requestId: ${requestId}`)
+      // console.log(`creatng new fileUpload collection for requestId: ${requestId}`)
       const form1AData = {
         General_arrangement_vehicle: {},
         Transmission: {},
@@ -148,7 +134,7 @@ exports.findOrCreateFileUpload = async (requestId) => {
         form13Data: form13Data,     
         footerData: footerData,
       })
-      console.log(`fileUpload: ${fileUpload}`)
+      // console.log(`fileUpload: ${fileUpload}`)
     }
   return fileUpload
 }

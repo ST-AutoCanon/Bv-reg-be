@@ -275,8 +275,8 @@ const HeadLampSchema = mongoose.Schema({
         label: {
           type: String,
           default: "TAC Number of Main beam headlamp bulb",
-          display: { type: Boolean, default: false },
         },
+          display: { type: Boolean, default: false },
       },
       TAC_Validity: {
         value: { type: String, default: "" },

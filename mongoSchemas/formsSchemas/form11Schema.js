@@ -278,38 +278,8 @@ const codeForMonthOfProductionSchema = mongoose.Schema({
       value: { type: String, default: "" },
       label: { type: String, default: "WMI Code" },
     },
-    // type_of_fuel: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Type Of Fuel" },
-    // },
-    // wheel_base: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Wheel Base" },
-    // },
-    // application: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Application" },
-    // },
-    // type_of_drive: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Type Of Drive" },
-    // },
-    // plant_code: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Plant Code" },
-    // },
-    // check_digit: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Check Digit" },
-    // },
-    // month: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Month" },
-    // },
-    // year: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Year" },
-    // },
+    
+   
     wmi_extension_code: {
       value: { type: String, default: "" },
       label: { type: String, default: "WMI Extension Code" },
@@ -457,59 +427,9 @@ VDS_value_eleventh: {
   value: { type: String, default: "" },
   label: { type: String, default: "Value 11th" },
 },
-
-
-
-
-
-
-
-
-
-
-
-
-    // sequence_tenth: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Sequence Number 10th" },
-    // },
-    // month_Year: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Month/Year" },
-    // },
-    // month_year_Code: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Month/Year Code" },
-    // },
-    // dummy: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Invalid" },
-    // },
-    // sequence_eleventh: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Sequence Number 11th" },
-    // },
-    // month_Year1: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Month/Year " },
-    // },
-    // month_year_Code1: {
-    //   value: { type: String, default: "" },
-    //   label: { type: String, default: "Month/Year Code " },
-    // },
-  
-       
-    
   },
 },
  
-
-
-
-
-
-
-
 })
 
 

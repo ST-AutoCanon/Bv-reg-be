@@ -26,14 +26,14 @@ exports.createSupplier = async (req, res, next) => {
         throw new Error(`reqBody is not provided`)
       }
       const supplierModel = getSupplierModel(reqBody)
-    console.log(`creating supplier: ${JSON.stringify(supplierModel)}`)
+    // console.log(`creating supplier: ${JSON.stringify(supplierModel)}`)
     const supplier = await createMongoSupplier(supplierModel);
     res.status(200).json({
       status: "success",
       body: supplier,
     });
   } catch (error) {
-    console.log(`exception occured: ${error}`);
+    // console.log(`exception occured: ${error}`);
     res.status(200).json({
       status: "failure",
       body: error,
@@ -49,7 +49,7 @@ exports.switchSupplierStatus = async (req, res, next) => {
     if(!supplierId || status === undefined){
       throw new Error(`required parameters not provided supplierId: ${supplierId}, status: ${status}`)
     }
-    console.log(`updating the supplierId : ${supplierId} to status: ${status}`)
+    // console.log(`updating the supplierId : ${supplierId} to status: ${status}`)
     const supplierSwitchStatus = await supplierSchema.findByIdAndUpdate(supplierId, { active: status }, { returnDocument: "after" })
     if(supplierSwitchStatus){
           res.status(200).json({
@@ -58,7 +58,7 @@ exports.switchSupplierStatus = async (req, res, next) => {
           })
     }
   } catch (error) {
-    console.log(`exception occured: ${error}`)
+    // console.log(`exception occured: ${error}`)
     res.status(200).json({
       status: "failure",
       body: error,
@@ -71,10 +71,10 @@ exports.getSupplierByKey = async () => {
     if(!defaultSupplierKey){
       throw new Error(`required parameters not provided to fetch supplier. key: ${defaultSupplierKey},`)
     }
-    console.log(`fetching supplier with key: ${defaultSupplierKey}`)
+    // console.log(`fetching supplier with key: ${defaultSupplierKey}`)
     return await supplierSchema.findOne({ supplierKey: defaultSupplierKey })
   } catch (error) {
-    console.log(`exception occured: ${error}`)
+    // console.log(`exception occured: ${error}`)
   }
 }
 

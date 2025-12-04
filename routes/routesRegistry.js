@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
     const requestId = req.params.requestId.replace(/\//g, '');    
     const originalname = file.originalname.replace(/\s+/g, '_')
     const filename = `${requestId}-${originalname}`;
-    console.log(`Uploading Image: ${filename}`)
+    // console.log(`Uploading Image: ${filename}`)
     cb(null, filename);
   }
 });

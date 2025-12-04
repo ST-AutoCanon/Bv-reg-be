@@ -27,13 +27,13 @@ const Tyres = async (supplierId, form1A) => {
     Any_other_Tyre:{},
     Tyre_Description:{},
   }
-  console.log(`creating data: ${JSON.stringify(Tyres)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Tyres)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Tyres.TyresData": Tyres } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -43,13 +43,13 @@ const WheelRim = async (supplierId, form1A) => {
     Front_Wheel_Rim: {},
     Rear_Wheel_Rim:{},
   }
-  console.log(`creating data: ${JSON.stringify(WheelRim)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(WheelRim)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Wheel_Rim.WheelRim": WheelRim } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -58,13 +58,13 @@ const HydraulicBrakeHose = async (supplierId, form1A) => {
     supplier: supplierId,
     Hydraulic_Brake_Hose: {},
   }
-  console.log(`creating data: ${JSON.stringify(HydraulicBrakeHose)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(HydraulicBrakeHose)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Hydraulic_Brake_Hose.HydraulicBrakeHose": HydraulicBrakeHose } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -74,13 +74,13 @@ const DaytimeRunningLampData = async (supplierId, form1A) => {
     Daytime_Running_Lamp: {},
     Daytime_Running_Lamp_Led: {},
   }
-  console.log(`creating data: ${JSON.stringify(DaytimeRunningLamp)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(DaytimeRunningLamp)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Daytime_Running_Lamp.DaytimeRunningLamp": DaytimeRunningLamp } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -89,13 +89,13 @@ const Horn = async (supplierId, form1A) => {
     supplier: supplierId,
     Horn: {},
   }
-  console.log(`creating data: ${JSON.stringify(Horn)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Horn)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Horn.Horn": Horn } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -106,13 +106,13 @@ const LigthingSignalingDevice = async (supplierId, form1A) => {
     Annexure_1: {},
     Annexure_2: {},
   }
-  console.log(`creating data: ${JSON.stringify(LigthingSignaling)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(LigthingSignaling)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Ligthing_Signaling.LigthingSignaling": LigthingSignaling } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -124,13 +124,13 @@ const HeadLamp = async (supplierId, form1A) => {
     Dipped_Beam_Headlamp_LED_Type: {},
     Dipped_Beam_Headlamp_Filament_Type: {},
   }
-  console.log(`creating data: ${JSON.stringify(HeadLamp)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(HeadLamp)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Head_Lamp.HeadLamp": HeadLamp } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -148,13 +148,13 @@ const PositionLamps = async (supplierId, form1A) => {
     Stop_Lamp_LED_Type: {},
     Stop_Lamp_bulb_Type: {},
   }
-  console.log(`creating data: ${JSON.stringify(PositionLamps)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(PositionLamps)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Position_Lamps.PositionLamps": PositionLamps } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -164,13 +164,13 @@ const RearRegistrationPlate = async (supplierId, form1A) => {
     Registration_Plate_Lamp_LED_Type: {},
     Registration_Plate_Lamp_bulb_type: {},
   }
-  console.log(`creating data: ${JSON.stringify(RearRegistrationPlate)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(RearRegistrationPlate)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Rear_Registration_Plate.RearRegistrationPlate": RearRegistrationPlate } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -183,13 +183,13 @@ const DirectionIndicatorLamp = async (supplierId, form1A) => {
     Rear_Direction_Indicator_Bulb_Type: {},
     Side_Direction_Indicator: {},
   }
-  console.log(`creating data: ${JSON.stringify(DirectionIndicatorLamp)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(DirectionIndicatorLamp)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Direction_Indicator_Lamp.DirectionIndicatorLamp": DirectionIndicatorLamp } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -202,13 +202,13 @@ const HazardWarningLamp = async (supplierId, form1A) => {
     Rear_Hazard_Lamp: {},
     Side_Hazard_Lamp: {},
   }
-  console.log(`creating data: ${JSON.stringify(HazardWarningLamp)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(HazardWarningLamp)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Hazard_Warning_Lamp.HazardWarningLamp": HazardWarningLamp } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -222,13 +222,13 @@ const RetroReflectors = async (supplierId, form1A) => {
     // Side_Hazard_Lamp: {},
     Reflective_Tape: {},
   }
-  console.log(`creating data: ${JSON.stringify(RetroReflectors)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(RetroReflectors)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Retro_Reflectors.RetroReflectors": RetroReflectors } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -237,13 +237,13 @@ const BrakeFluid = async (supplierId, form1A) => {
     supplier: supplierId,
     Hydraulic_Brake_Fluid: {},
   }
-  console.log(`creating data: ${JSON.stringify(BrakeFluid)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(BrakeFluid)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Brake_Fluid.BrakeFluid": BrakeFluid } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -252,13 +252,13 @@ const VehicleControlUnit = async (supplierId, form1A) => {
     supplier: supplierId,
     Vehicle_Control: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehicleControlUnit)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehicleControlUnit)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Vehicle_Control_Unit.VehicleControlUnit": VehicleControlUnit } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -267,13 +267,13 @@ const RearViewMirror = async (supplierId, form1A) => {
     supplier: supplierId,
     Rear_View_Mirror: {},
   }
-  console.log(`creating data: ${JSON.stringify(RearViewMirror)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(RearViewMirror)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Rear_View_Mirror.RearViewMirror": RearViewMirror } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -283,13 +283,13 @@ const ReversingLamp = async (supplierId, form1A) => {
     Reversing_Lamp: {},
     Reverse_Lamp_Bulb_Type: {},
   }
-  console.log(`creating data: ${JSON.stringify(ReversingLamp)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(ReversingLamp)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Reversing_Lamp.ReversingLamp": ReversingLamp } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -298,13 +298,13 @@ const VehicleGeneralInformation = async (supplierId, form1A) => {
     supplier: supplierId,
     Manufacturer_Details: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehicleGeneralInformation)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehicleGeneralInformation)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Vehicle_General_Information.VehicleGeneralInformation": VehicleGeneralInformation } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -313,13 +313,13 @@ const GeneralArrangementVehicle = async (supplierId, form1A) => {
     supplier: supplierId,
     General_arrangement_vehicle: {},
   }
-  console.log(`creating data: ${JSON.stringify(GeneralArrangementVehicle)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(GeneralArrangementVehicle)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "General_arrangement_vehicle.GeneralArrangementVehicle": GeneralArrangementVehicle } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -328,13 +328,13 @@ const GeneralArrangementVehicle = async (supplierId, form1A) => {
 //     supplier: supplierId,
 //     General_arrangement_vehicle: {},
 //   }
-//   console.log(`creating data: ${JSON.stringify(VehicleDimensions)} data for form1A: ${form1A._id}`)
+//   //console.log(`creating data: ${JSON.stringify(VehicleDimensions)} data for form1A: ${form1A._id}`)
 //   const updateform1AData = await form1ASchema.findByIdAndUpdate(
 //     form1A._id,
 //     { $push: { "Vehicle_Dimensions.VehicleDimensions": VehicleDimensions } },
 //     { returnDocument: "after" }
 //   )
-//   console.log(`updateform1AData: ${updateform1AData}`)
+//   //console.log(`updateform1AData: ${updateform1AData}`)
 //   return updateform1AData
 // }
 
@@ -345,13 +345,13 @@ const Weights = async (supplierId, form1A) => {
     Gross_Vehicle_Weight: {},
     Maximum_Carrying_capacity: {},
   }
-  console.log(`creating data: ${JSON.stringify(Weights)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Weights)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Weights.WeightsData": Weights } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -360,13 +360,13 @@ const Suspension = async (supplierId, form1A) => {
     supplier: supplierId,
     Suspension: {},
   }
-  console.log(`creating data: ${JSON.stringify(Suspension)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Suspension)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Suspension.SuspensionData": Suspension } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -385,13 +385,13 @@ const Brakes = async (supplierId, form1A) => {
     Parking_Brake: {},
     Re_Generative_Brake:{},
   }
-  console.log(`creating data: ${JSON.stringify(Brakes)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Brakes)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Brakes.BrakesData": Brakes } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 const TwoWheelerAggregates = async (supplierId, form1A) => {
@@ -402,13 +402,13 @@ const TwoWheelerAggregates = async (supplierId, form1A) => {
     Spray_Suppression_Rear_Mud_Gaurd: {},
     Two_Wheeler_Stand: {},
   }
-  console.log(`creating data: ${JSON.stringify(TwoWheelerAggregates)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(TwoWheelerAggregates)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Two_Wheeler_Aggregates.TwoWheelerAggregatesData": TwoWheelerAggregates } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 const SteeringSuspensionAntiTheft = async (supplierId, form1A) => {
@@ -418,13 +418,13 @@ const SteeringSuspensionAntiTheft = async (supplierId, form1A) => {
     Suspension: {},
     Lock_Anti_theft_device: {},
   }
-  console.log(`creating data: ${JSON.stringify(SteeringSuspensionAntiTheft)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(SteeringSuspensionAntiTheft)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "SteeringSuspensionAntiTheft.SteeringSuspensionAntiTheftData": SteeringSuspensionAntiTheft } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -433,13 +433,13 @@ const VehicleControlsLocation = async (supplierId, form1A) => {
     supplier: supplierId,
     Vehicle_Controls: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehicleControlsLocation)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehicleControlsLocation)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Vehicle_Controls_and_Their_Location.VehicleControlsLocation": VehicleControlsLocation } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -448,13 +448,13 @@ const TellTales = async (supplierId, form1A) => {
     supplier: supplierId,
     Tell_Tales: {},
   }
-  console.log(`creating data: ${JSON.stringify(TellTales)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(TellTales)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Tell_Tales.TellTales": TellTales } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -463,13 +463,13 @@ const Indicators = async (supplierId, form1A) => {
     supplier: supplierId,
     Indicators: {},
   }
-  console.log(`creating data: ${JSON.stringify(Indicators)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Indicators)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Indicators.IndicatorsData": Indicators } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -478,13 +478,13 @@ const VehicleIdentificationNumber = async (supplierId, form1A) => {
     supplier: supplierId,
     VINNumbering: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehicleIdentificationNumber)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehicleIdentificationNumber)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Vehicle_Identification_Number.VehicleIdentificationNumber": VehicleIdentificationNumber } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -493,7 +493,7 @@ const HandleLock = async (supplierId, form1A, requestId) => {
     supplier: supplierId,
     Lock_Anti_theft_device: {},
   }
-  console.log(`creating data: ${JSON.stringify(HandleLock)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(HandleLock)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Handle_Lock_Anti_Theft_Device.HandleLock": HandleLock } },
@@ -502,13 +502,13 @@ const HandleLock = async (supplierId, form1A, requestId) => {
 
   if(requestId != null){
     const form8 = await form8Schema.findOne({ homologationRequest: requestId })
-    console.log(`form8: ${JSON.stringify(form8)}`)
+    //console.log(`form8: ${JSON.stringify(form8)}`)
     if(form8 != null){
       const HandleLock = {
         supplier: supplierId,
         Protective_Device_Handle_Lock: {},
       }
-      console.log(`creating data: ${JSON.stringify(HandleLock)} data for form8: ${form8._id}`)
+      //console.log(`creating data: ${JSON.stringify(HandleLock)} data for form8: ${form8._id}`)
       await form8Schema.findByIdAndUpdate(
         form8._id,
         { $push: { "Handle_Lock.HandleLock": HandleLock } },
@@ -517,7 +517,7 @@ const HandleLock = async (supplierId, form1A, requestId) => {
     }
   }
 
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -526,13 +526,13 @@ const GrabHandle = async (supplierId, form1A) => {
     supplier: supplierId,
     Grab_handle_Straps: {},
   }
-  console.log(`creating data: ${JSON.stringify(GrabHandle)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(GrabHandle)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Grab_handle.GrabHandle": GrabHandle } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -541,13 +541,13 @@ const TwoWheelerExternalProjection = async (supplierId, form1A) => {
     supplier: supplierId,
     External_Projection_Details: {},
   }
-  console.log(`creating data: ${JSON.stringify(TwoWheelerExternalProjection)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(TwoWheelerExternalProjection)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Two_Wheeler_External_Projection.TwoWheelerExternalProjection": TwoWheelerExternalProjection } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -557,13 +557,13 @@ const DriveTrainSystem = async (supplierId, form1A) => {
     Transmission: {},
     Clutch:{}
   }
-  console.log(`creating data: ${JSON.stringify(DriveTrainSystem)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(DriveTrainSystem)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Drive_Train_System.DriveTrainSystemData": DriveTrainSystem } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -572,13 +572,13 @@ const FireFightingSystem = async (supplierId, form1A) => {
     supplier: supplierId,
     Fire_Fighting_System: {},
   }
-  console.log(`creating data: ${JSON.stringify(FireFightingSystem)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(FireFightingSystem)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "FireFightingSystem.FireFightingSystemData": FireFightingSystem } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -587,13 +587,13 @@ const VehiclePerformance = async (supplierId, form1A) => {
     supplier: supplierId,
     Vehicle_Performance: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehiclePerformance)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehiclePerformance)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "VehiclePerformance.VehiclePerformanceData": VehiclePerformance } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -602,13 +602,13 @@ const Dimension = async (supplierId, form1A) => {
     supplier: supplierId,
     Dimension: {},
   }
-  console.log(`creating data: ${JSON.stringify(Dimension)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Dimension)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Dimension.DimensionData": Dimension } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -617,13 +617,13 @@ const Payload = async (supplierId, form1A) => {
     supplier: supplierId,
     Payload: {},
   }
-  console.log(`creating data: ${JSON.stringify(Payload)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(Payload)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Payload.PayloadData": Payload } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -640,28 +640,28 @@ const WindscreenWipingSystem = async (supplierId, form1A, requestId) => {
     Washer_tank_motor_or_Washer_Pump_if_provided: {},
 
   }
-  console.log(`creating data: ${JSON.stringify(WindscreenWipingSystem)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(WindscreenWipingSystem)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Windscreen_and_Wiping_System.WindscreenAndWipingSystem": WindscreenWipingSystem } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
 
   const form8 = await form8Schema.findOne({ homologationRequest: requestId })
-  console.log(`form8: ${JSON.stringify(form8)}`)
+  //console.log(`form8: ${JSON.stringify(form8)}`)
   if(form8 != null){
     const WindscreenSchema = {
       supplier: supplierId,
       Windscreen: {},
     }
-    console.log(`creating data: ${JSON.stringify(WindscreenSchema)} data for form8: ${form8._id}`)
+    //console.log(`creating data: ${JSON.stringify(WindscreenSchema)} data for form8: ${form8._id}`)
     const test = await form8Schema.findByIdAndUpdate(
       form8._id,
       { $push: { "Wind_screen.Windscreen": WindscreenSchema } },
       { returnDocument: "after" }
     )
-    console.log(`test: ${test}`)
+    //console.log(`test: ${test}`)
   }
   return updateform1AData
 }
@@ -671,13 +671,13 @@ const SeatingArrangement = async (supplierId, form1A) => {
     supplier: supplierId,
     Seating_Arrangement: {},
   }
-  console.log(`creating data: ${JSON.stringify(SeatingArrangement)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(SeatingArrangement)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Seating_Arrangement.SeatingArrangementData": SeatingArrangement } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -686,13 +686,13 @@ const SeatingArrangement = async (supplierId, form1A) => {
 //     supplier: supplierId,
 //     R_Point: {},
 //   }
-//   console.log(`creating data: ${JSON.stringify(RPoint)} data for form1A: ${form1A._id}`)
+//   //console.log(`creating data: ${JSON.stringify(RPoint)} data for form1A: ${form1A._id}`)
 //   const updateform1AData = await form1ASchema.findByIdAndUpdate(
 //     form1A._id,
 //     { $push: { "RPoint.RPointData": RPoint } },
 //     { returnDocument: "after" }
 //   )
-//   console.log(`updateform1AData: ${updateform1AData}`)
+//   //console.log(`updateform1AData: ${updateform1AData}`)
 //   return updateform1AData
 // }
 
@@ -702,13 +702,13 @@ const SeatingDimension = async (supplierId, form1A) => {
     SeatingDimension: {},
     R_Point: {},
   }
-  console.log(`creating data: ${JSON.stringify(SeatingDimension)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(SeatingDimension)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "SeatingDimension.SeatingDimensionData": SeatingDimension } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -717,13 +717,13 @@ const HPoint = async (supplierId, form1A) => {
     supplier: supplierId,
     HPoint: {},
   }
-  console.log(`creating data: ${JSON.stringify(HPoint)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(HPoint)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "H_Point.HPointData": HPoint } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -732,13 +732,13 @@ const RearEntryProvision = async (supplierId, form1A) => {
     supplier: supplierId,
     Rear_Entry_Provision: {},
   }
-  console.log(`creating data: ${JSON.stringify(RearEntryProvision)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(RearEntryProvision)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Rear_Entry_Provision.RearEntryProvision": RearEntryProvision } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -747,13 +747,13 @@ const InstrumentCluster = async (supplierId, form1A) => {
     supplier: supplierId,
     Instrument_Cluster: {},
   }
-  console.log(`creating data: ${JSON.stringify(InstrumentCluster)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(InstrumentCluster)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Instrument_Cluster.InstrumentCluster": InstrumentCluster } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -762,13 +762,13 @@ const CriticalElectricalDevices = async (supplierId, form1A) => {
     supplier: supplierId,
     Critical_Electrical_Devices: {},
   }
-  console.log(`creating data: ${JSON.stringify(CriticalElectricalDevices)} data for form1A: ${form1A._id}`)
+  //console.log(`creating data: ${JSON.stringify(CriticalElectricalDevices)} data for form1A: ${form1A._id}`)
   const updateform1AData = await form1ASchema.findByIdAndUpdate(
     form1A._id,
     { $push: { "Critical_Electrical_Devices.CriticalElectricalDevices": CriticalElectricalDevices } },
     { returnDocument: "after" }
   )
-  console.log(`updateform1AData: ${updateform1AData}`)
+  //console.log(`updateform1AData: ${updateform1AData}`)
   return updateform1AData
 }
 
@@ -827,7 +827,7 @@ exports.getForm1AForRequestId = async (requestId) => {
     }
     return null;
   } catch (error) {
-    console.log(`Exception occured: ${error}`);
+    //console.log(`Exception occured: ${error}`);
     res.status(200).json({
       status: "failure",
       body: error,
@@ -837,7 +837,7 @@ exports.getForm1AForRequestId = async (requestId) => {
 
 exports.createEmptyForm1AComponentDataForSupplier = async (component, supplierId, requestId) => {
   try {
-    console.log(`fetching form1A data for requestId: ${requestId}`)
+    //console.log(`fetching form1A data for requestId: ${requestId}`)
     const form1A = await findOrCreateForm1A(requestId)
     switch (component) {
       case "Tyres":
@@ -932,7 +932,7 @@ exports.createEmptyForm1AComponentDataForSupplier = async (component, supplierId
         break
     }
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    //console.log(`Exception occured: ${error}`)
     return error
   }
 }
@@ -949,7 +949,7 @@ exports.updateform1AData = async (requestId, data) => {
       throw new Error(`form1A doesnt exist with id: ${requestId}`)
     }
     let updatedform1AData
-    console.log(`updating ${JSON.stringify(data)} data for form1A: ${form1A._id}`)
+    //console.log(`updating ${JSON.stringify(data)} data for form1A: ${form1A._id}`)
     if (data.Front_Tyre) {
       updatedform1AData = await form1ASchema.findByIdAndUpdate(
         form1A._id,
@@ -1829,7 +1829,7 @@ if (data.Manufacturer_Details) {
 
   if (form13) {
     const item = form13.Vehicle_General_Information.vehicleGeneralInformation.find(arrItem => arrItem.supplier && arrItem.supplier.toString() === data.supplier._id);
-    console.log("Form13 item found:", item);
+    //console.log("Form13 item found:", item);
 
     if(item != null) {await form13Schema.findByIdAndUpdate(form13._id,
       {$set: {
@@ -2744,92 +2744,92 @@ if (form8 ) {
 
   return updatedform1AData
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    //console.log(`Exception occured: ${error}`)
     return error
   }
 }
 
 const findOrCreateForm1A = async (requestId) => {
-  console.log(`inside findOrCreateForm1A`)
+  //console.log(`inside findOrCreateForm1A`)
   let form1A = await form1ASchema.findOne({ homologationRequest: requestId })
     if (form1A == null) {
-      console.log(`creatng new form1A collection for requestId: ${requestId}`)
+      //console.log(`creatng new form1A collection for requestId: ${requestId}`)
       form1A = await form1ASchema.create({
         homologationRequest: requestId,
       })
       const defaultSupplier = await getSupplierByKey();
       if(defaultSupplier){
         const requestData = await homologationRequestSchema.findById(requestId)
-        console.log(`adding defaultSupplier for VehicleGeneralInformation of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehicleGeneralInformation of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehicleGeneralInformation(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for GeneralArrangementVehicle of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for GeneralArrangementVehicle of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await GeneralArrangementVehicle(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for Weights of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for Weights of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await Weights(defaultSupplier._id, form1A)
 
-        console.log(`adding defaultSupplier for Brakes of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for Brakes of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await Brakes(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for VehicleControlsLocation of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehicleControlsLocation of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehicleControlsLocation(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for TellTales of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for TellTales of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await TellTales(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for Indicators of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for Indicators of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await Indicators(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for VehicleIdentificationNumber of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehicleIdentificationNumber of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehicleIdentificationNumber(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for HandleLock of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for HandleLock of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await HandleLock(defaultSupplier._id, form1A, requestId)
-        console.log(`adding defaultSupplier for DriveTrainSystem of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for DriveTrainSystem of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await DriveTrainSystem(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for Dimension of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for Dimension of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await Dimension(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for Payload of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for Payload of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await Payload(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for WindscreenWipingSystem of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for WindscreenWipingSystem of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await WindscreenWipingSystem(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for SeatingArrangement of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for SeatingArrangement of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await SeatingArrangement(defaultSupplier._id, form1A)
-        // console.log(`adding defaultSupplier for RPoint of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        // //console.log(`adding defaultSupplier for RPoint of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         // await RPoint(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for SeatingDimension of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for SeatingDimension of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await SeatingDimension(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for HPoint of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for HPoint of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await HPoint(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for RearEntryProvision of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for RearEntryProvision of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await RearEntryProvision(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for VehiclePerformance of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehiclePerformance of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehiclePerformance(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for FireFightingSystem of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for FireFightingSystem of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await FireFightingSystem(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for InstrumentCluster of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for InstrumentCluster of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await InstrumentCluster(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for CriticalElectricalDevices of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for CriticalElectricalDevices of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await CriticalElectricalDevices(defaultSupplier._id, form1A)
-        console.log(`adding defaultSupplier for VehicleControlUnit of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehicleControlUnit of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehicleControlUnit(defaultSupplier._id, form1A)
         
         
         if (requestData) {  
           if(requestData.vehicle_type.value === '2-Wheeler'){
             vehicle_type = '2-Wheeler';
-            console.log(`adding defaultSupplier for Suspension of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+            //console.log(`adding defaultSupplier for Suspension of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
             await Suspension(defaultSupplier._id, form1A)
-            console.log(`adding defaultSupplier for TwoWheelerAggregates of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+            //console.log(`adding defaultSupplier for TwoWheelerAggregates of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
             await TwoWheelerAggregates(defaultSupplier._id, form1A)
-            console.log(`adding defaultSupplier for TwoWheelerExternalProjection of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+            //console.log(`adding defaultSupplier for TwoWheelerExternalProjection of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
             await TwoWheelerExternalProjection(defaultSupplier._id, form1A)
           } else{
             vehicle_type = '3-Wheeler';
-            console.log(`adding defaultSupplier for GrabHandle of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+            //console.log(`adding defaultSupplier for GrabHandle of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
             await GrabHandle(defaultSupplier._id, form1A)
-            console.log(`adding defaultSupplier for SteeringSuspensionAntiTheft of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+            //console.log(`adding defaultSupplier for SteeringSuspensionAntiTheft of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
             await SteeringSuspensionAntiTheft(defaultSupplier._id, form1A)
           }
         }
 
 
       } else{
-        console.log(`inside findOrCreateForm1A :defaultSupplier is not found`)
+        //console.log(`inside findOrCreateForm1A :defaultSupplier is not found`)
       }
     }
     return form1A

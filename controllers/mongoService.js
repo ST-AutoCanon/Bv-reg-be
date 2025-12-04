@@ -40,20 +40,20 @@ exports.getMongoConnection = async () => {
 
 async function processDefaultSupplier() {
   try {
-    console.log(`fetching default supplier before attempting to create one`);
+    // console.log(`fetching default supplier before attempting to create one`);
     const defaultSupplier = await getSupplierByKey();
     if (!defaultSupplier) {
-      console.log(`creating default supplier`);
+      // console.log(`creating default supplier`);
       const supplier = await createMongoSupplier(defaultSupplierModel());
       if (supplier) {
-        console.log(`created default supplier: ${JSON.stringify(supplier)}`);
+        // console.log(`created default supplier: ${JSON.stringify(supplier)}`);
       } else{
-        console.log(`default supplier was not created: ${JSON.stringify(supplier)}`);
+        // console.log(`default supplier was not created: ${JSON.stringify(supplier)}`);
       }
     } else {
-      console.log(`default supplier found: ${JSON.stringify(defaultSupplier)}`);
+      // console.log(`default supplier found: ${JSON.stringify(defaultSupplier)}`);
     }
   } catch (error) {
-    console.log(`exception occured: ${error}`);
+    // console.log(`exception occured: ${error}`);
   }
 }

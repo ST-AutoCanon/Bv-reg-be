@@ -105,7 +105,7 @@ userProfileSchema.pre("validate", async function (next) {
     const currentYear = new Date().getFullYear()
     const count = await mongoose.model("UserProfile").estimatedDocumentCount()
     const usernumberValue = count ? `${usernumberPrefix}${currentYear}-${count + 1}` : `${usernumberPrefix}${currentYear}-${1}`
-    console.log(`usernumberValue: ${usernumberValue}`)
+    // console.log(`usernumberValue: ${usernumberValue}`)
     doc.usernumber = usernumberValue
   }
   next()

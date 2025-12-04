@@ -6,13 +6,13 @@ const VehicleGeneralInformation = async (supplierId, form11) => {
     supplier: supplierId,
     Manufacturer_Details: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehicleGeneralInformation)} data for form11: ${form11._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehicleGeneralInformation)} data for form11: ${form11._id}`)
   const updateform11Data = await form11Schema.findByIdAndUpdate(
     form11._id,
     { $push: { "Vehicle_General_Information.vehicleGeneralInformation": VehicleGeneralInformation } },
     { returnDocument: "after" }
   )
-  console.log(`updateform11Data: ${updateform11Data}`)
+  //console.log(`updateform11Data: ${updateform11Data}`)
   return updateform11Data
 }
 
@@ -21,13 +21,13 @@ const VehicleIdentificationNumber = async (supplierId, form11) => {
     supplier: supplierId,
     VIN_Numbering: {},
   }
-  console.log(`creating data: ${JSON.stringify(VehicleIdentificationNumber)} data for form11: ${form11._id}`)
+  //console.log(`creating data: ${JSON.stringify(VehicleIdentificationNumber)} data for form11: ${form11._id}`)
   const updateform11Data = await form11Schema.findByIdAndUpdate(
     form11._id,
     { $push: { "Vehicle_Identification_Number.VehicleIdentificationNumber": VehicleIdentificationNumber } },
     { returnDocument: "after" }
   )
-  console.log(`updateform11Data: ${updateform11Data}`)
+  //console.log(`updateform11Data: ${updateform11Data}`)
   return updateform11Data
 }
 
@@ -41,13 +41,13 @@ const codeForMonthOfProduction = async (supplierId, form11) => {
     vds_Sequence:{},
     Month_of_Production: {}
   }
-  console.log(`creating data: ${JSON.stringify(codeForMonthOfProduction)} data for form11: ${form11._id}`)
+  //console.log(`creating data: ${JSON.stringify(codeForMonthOfProduction)} data for form11: ${form11._id}`)
   const updateform11Data = await form11Schema.findByIdAndUpdate(
     form11._id,
     { $push: { "Month_of_Production.codeForMonthOfProduction": codeForMonthOfProduction } },
     { returnDocument: "after" }
   )
-  console.log(`updateform11Data: ${updateform11Data}`)
+  //console.log(`updateform11Data: ${updateform11Data}`)
   return updateform11Data
 }
 
@@ -64,7 +64,7 @@ exports.getForm11ForRequestId = async (requestId) => {
     }
     return null
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    //console.log(`Exception occured: ${error}`)
     res.status(200).json({
       status: "failure",
       body: error,
@@ -74,7 +74,7 @@ exports.getForm11ForRequestId = async (requestId) => {
 
 exports.createEmptyForm11ComponentDataForSupplier = async (component, supplierId, requestId) => {
   try {
-    console.log(`fetching form11 data for requestId: ${requestId}`)
+    //console.log(`fetching form11 data for requestId: ${requestId}`)
     const form11 = await findOrCreateForm11(requestId)
     switch (component) {
       case "Vehicle General Information":
@@ -87,7 +87,7 @@ exports.createEmptyForm11ComponentDataForSupplier = async (component, supplierId
         break
     }
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    //console.log(`Exception occured: ${error}`)
     return error
   }
 }
@@ -99,7 +99,7 @@ exports.updateForm11Data = async (requestId, data) => {
       throw new Error(`form11 doesnt exist with id: ${requestId}`)
     }
     let updatedform11Data
-    console.log(`updating ${JSON.stringify(data)} data for form11: ${form11._id}`)
+    //console.log(`updating ${JSON.stringify(data)} data for form11: ${form11._id}`)
     if (data.Manufacturer_Details) {
       updatedform11Data = await form11Schema.findByIdAndUpdate(
         form11._id,
@@ -113,17 +113,7 @@ exports.updateForm11Data = async (requestId, data) => {
         { arrayFilters: [{ "vehicleGeneralInformation._id": data._id }], returnDocument: "after" }
       )
     }
-    // if (data.VIN_Numbering) {
-    //   updatedform11Data = await form11Schema.findByIdAndUpdate(
-    //     form11._id,
-    //     {
-    //       $set: {
-    //         "Vehicle_Identification_Number.VehicleIdentificationNumber.$[vehicleIdentificationNumber].VIN_Numbering": data.VIN_Numbering,
-    //       },
-    //     },
-    //     { arrayFilters: [{ "vehicleIdentificationNumber._id": data._id }], returnDocument: "after" }
-    //   )
-    // }
+    
 
     if (data.VIN_Numbering) {
       updatedform11Data = await form11Schema.findByIdAndUpdate(
@@ -207,7 +197,7 @@ exports.updateForm11Data = async (requestId, data) => {
     }
     return updatedform11Data
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    //console.log(`Exception occured: ${error}`)
     return error
   }
 }
@@ -215,20 +205,20 @@ exports.updateForm11Data = async (requestId, data) => {
 const findOrCreateForm11 = async (requestId) => {
   let form11 = await form11Schema.findOne({ homologationRequest: requestId })
     if (form11 == null) {
-      console.log(`creatng new form11 collection for supplierId: ${requestId}`)
+      //console.log(`creatng new form11 collection for supplierId: ${requestId}`)
       form11 = await form11Schema.create({
         homologationRequest: requestId,
       })
       const defaultSupplier = await getSupplierByKey();
       if(defaultSupplier){
-        console.log(`adding defaultSupplier for VehicleGeneralInformation of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehicleGeneralInformation of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehicleGeneralInformation(defaultSupplier._id, form11)
-        console.log(`adding defaultSupplier for VehicleIdentificationNumber of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for VehicleIdentificationNumber of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await VehicleIdentificationNumber(defaultSupplier._id, form11)
-        console.log(`adding defaultSupplier for codeForMonthOfProduction of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
+        //console.log(`adding defaultSupplier for codeForMonthOfProduction of key: ${defaultSupplier.supplierKey} and id: ${defaultSupplier._id}`)
         await codeForMonthOfProduction(defaultSupplier._id, form11)
       } else{
-        console.log(`inside findOrCreateForm11 :defaultSupplier is not found`)
+        //console.log(`inside findOrCreateForm11 :defaultSupplier is not found`)
       }
     }
     return form11

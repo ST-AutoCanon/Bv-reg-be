@@ -28,7 +28,7 @@ exports.newUserRegistration = async (req, res, next) => {
         alternateContact: request.profileAddress.alternateContact,
       },
     }
-    console.log(`creating a new user registration request: ${JSON.stringify(userRegistrationPayload)}`)
+    // console.log(`creating a new user registration request: ${JSON.stringify(userRegistrationPayload)}`)
     const newRegistration = await UserRegistration.create(userRegistrationPayload)
     if (newRegistration != null) {
       res.status(201).json({
@@ -42,7 +42,7 @@ exports.newUserRegistration = async (req, res, next) => {
       })
     }
   } catch (error) {
-    console.log(`error while creating new registration: ${error}`)
+    // console.log(`error while creating new registration: ${error}`)
     res.status(200).json({
       status: "failure",
       body: `error while creating new registration: ${error}`,
@@ -64,14 +64,14 @@ exports.searchUserRegistrations = async (req, res, next) => {
       createdAt: { $gte: startDate, $lte: endDate },
       status: request.status,
     }
-    console.log(`queryPayload: ${JSON.stringify(queryPayload)}`)
+    // console.log(`queryPayload: ${JSON.stringify(queryPayload)}`)
     const userRegistrationCollection = await UserRegistration.find(queryPayload).sort({ createdAt: "asc" })
     res.status(200).json({
       status: "success",
       body: userRegistrationCollection,
     })
   } catch (error) {
-    console.log(`error while searching for registration requests: ${error}`)
+    // console.log(`error while searching for registration requests: ${error}`)
     res.status(200).json({
       status: "failure",
       body: `error while searching for registration requests: ${error}`,
@@ -87,22 +87,22 @@ exports.processUserRegistration = async (req, res, next) => {
     throw new Error(`request does not contain required parameters: userRegistrationId: ${userRegistrationId}, status: ${status}`)
   }
   if (status === "rejected") {
-    console.log(`updating userRegistration request: ${userRegistrationId} to "${status}" status`)
+    // console.log(`updating userRegistration request: ${userRegistrationId} to "${status}" status`)
     const updatedReq = await UserRegistration.findByIdAndUpdate(userRegistrationId, { status }, { returnDocument: "after" })
-    console.log(`userRegistration request: ${userRegistrationId} request updated to "${status}" status`)
+    // console.log(`userRegistration request: ${userRegistrationId} request updated to "${status}" status`)
     res.status(200).json({
       status: "success",
       body: `userRegistration request: ${userRegistrationId} request updated to "${status}" status`,
     })
   }
   else if (status === "approved"){
-    console.log(`updating userRegistration request: ${userRegistrationId} to "${status}" status`)
+    // console.log(`updating userRegistration request: ${userRegistrationId} to "${status}" status`)
     const updatedReq = await UserRegistration.findByIdAndUpdate(userRegistrationId, { status }, { returnDocument: "after" })
-    console.log(`userRegistration request: ${userRegistrationId} request updated to "${status}" status`)
+    // console.log(`userRegistration request: ${userRegistrationId} request updated to "${status}" status`)
 
     const newUserProfile = await createUserProfile(updatedReq)
     if(newUserProfile != null){
-      console.log(`new user profile with username: ${newUserProfile.username} created`)
+      // console.log(`new user profile with username: ${newUserProfile.username} created`)
       res.status(201).json({
         status: "success",
         body: `new user profile with username: ${newUserProfile.username} created`,
@@ -111,7 +111,7 @@ exports.processUserRegistration = async (req, res, next) => {
   }
 
   } catch (error) {
-    console.log(`error while searching for registration requests: ${error}`)
+    // console.log(`error while searching for registration requests: ${error}`)
     res.status(200).json({
       status: "failure",
       body: `error while searching for registration requests: ${error}`,

@@ -7,51 +7,7 @@ const fileUploadService = require("./fileUploadService");
 
 const loadash = require("lodash")
 
-// const calculateFormPercentage = async (formDataObj) => {
-//   delete formDataObj['homologationRequest'];
-//   delete formDataObj['createdAt'];
-//   delete formDataObj['updatedAt'];
-//   delete formDataObj['__v'];
-//   delete formDataObj['_id'];
-//   const totalComponents = Object.keys(formDataObj).length
-//   if(totalComponents <= 0) {
-//     return 0
-//   }
-//   let allComponentsPerceSummation = 0
-//   for (const component of Object.keys(formDataObj)) {
-//     let percentFilled = 0
-//     let totalProps = 0
-//     let filledProps = 0;
 
-//     const componentData = formDataObj[component];
-//     delete componentData['label'];
-//     const componentDataKey = Object.keys(componentData)
-//     const componentDataArr = componentData[componentDataKey]
-
-//     if(componentDataArr.length == 0){
-//       percentFilled = 0
-//     } else {
-//       for (const data of componentDataArr) {
-//           if(data.supplier && data.supplier.active){
-//               delete data['supplier'];
-//               delete data['_id'];
-//               for (const subSectionData of Object.keys(data)) {
-//                   const properties = data[subSectionData].properties
-//                   totalProps = totalProps + Object.keys(properties).length
-//                   Object.keys(properties).forEach(prop => {
-//                       if(properties[prop]['value'] !== ''){
-//                           filledProps++
-//                       }
-//                   })
-//               }
-//           }
-//         }
-//         percentFilled = (filledProps / totalProps) * 100;
-//         allComponentsPerceSummation = allComponentsPerceSummation + percentFilled
-//     }
-//   }
-//   return (allComponentsPerceSummation/totalComponents).toFixed(2)
-// }
 const calculateFormPercentage = async (formDataObj) => {
   delete formDataObj['homologationRequest'];
   delete formDataObj['createdAt'];
@@ -118,7 +74,7 @@ const calculateFormPercentage = async (formDataObj) => {
 };
 
 exports.getFormsData = async (requestId) => {
-    console.log(`fetching forms for requestId: ${requestId}`)
+    // console.log(`fetching forms for requestId: ${requestId}`)
     let formsData = {}
     const form7ForRequest = await form7Service.getForm7ForRequestId(requestId)
     if (form7ForRequest != null) {
@@ -133,7 +89,7 @@ exports.getFormsData = async (requestId) => {
       const form8ForRequestcp = loadash.cloneDeep(form8ForRequest)
       const percentageFilled = await calculateFormPercentage(form8ForRequestcp)
       formsData.form8Data.percentageFilled = percentageFilled
-      console.log('percentageFilled form8Data :',percentageFilled)
+      // console.log('percentageFilled form8Data :',percentageFilled)
     }
     const form11ForRequest = await form11Service.getForm11ForRequestId(requestId)
     if (form11ForRequest != null) {
@@ -160,7 +116,7 @@ exports.getFormsData = async (requestId) => {
 };
 
 exports.getFileUploadData = async (requestId) => {
-  console.log(`fetching FileUploadData for requestId: ${requestId}`)
+  // console.log(`fetching FileUploadData for requestId: ${requestId}`)
   return await fileUploadService.getFileUploadRequestId(requestId)
 };
 
@@ -169,23 +125,23 @@ exports.createFormsComponentDataForSupplier = async (component, supplierId, requ
   const formsData = {}
   for (const form of forms) {
     if (form === "7") {
-      console.log(`creating empty form for ${form}`)
+      // console.log(`creating empty form for ${form}`)
       formsData.form7Data = await form7Service.createEmptyForm7ComponentDataForSupplier(component, supplierId, requestId)
     }
     if (form === "8") {
-      console.log(`creating empty form for ${form}`)
+      // console.log(`creating empty form for ${form}`)
       formsData.form8Data = await form8Service.createEmptyForm8ComponentDataForSupplier(component, supplierId, requestId)
     }
     if (form === "11") {
-      console.log(`creating empty form for ${form}`)
+      // console.log(`creating empty form for ${form}`)
       formsData.form11Data = await form11Service.createEmptyForm11ComponentDataForSupplier(component, supplierId, requestId)
     }
     if (form === "13") {
-      console.log(`creating empty form for ${form}`)
+      // console.log(`creating empty form for ${form}`)
       formsData.form13Data = await form13Service.createEmptyForm13ComponentDataForSupplier(component, supplierId, requestId)
     }
     if (form === "1A") {
-       console.log(`creating empty form for ${form}`)
+      //  console.log(`creating empty form for ${form}`)
        formsData.form1AData = await form1AService.createEmptyForm1AComponentDataForSupplier(component, supplierId, requestId)
     }
   }
@@ -209,13 +165,13 @@ exports.updateFormsData = async (requestId, data, formType) => {
   if (formType === "1A") {
     updatedFormData = await form1AService.updateform1AData(requestId, data)
   }
-  console.log(`returning updatedFormData: ${JSON.stringify(updatedFormData)}`)
+  // console.log(`returning updatedFormData: ${JSON.stringify(updatedFormData)}`)
   return updatedFormData
 }
 
 exports.createFormModelsForRequestId = async (requestId) => {
   try {
-    console.log(`creating empty forms for requestId: ${requestId}`)
+    // console.log(`creating empty forms for requestId: ${requestId}`)
     const formsData = {}
     const form7ForRequest = await form7Service.findOrCreateForm7(requestId)
     if (form7ForRequest != null) formsData.form7Data = form7ForRequest
@@ -229,7 +185,7 @@ exports.createFormModelsForRequestId = async (requestId) => {
     if (form1AForRequest != null) formsData.form1AData = form1AForRequest
     return formsData
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    // console.log(`Exception occured: ${error}`)
     res.status(200).json({
       status: "failure",
       body: error,
@@ -239,11 +195,11 @@ exports.createFormModelsForRequestId = async (requestId) => {
 
 exports.createFileUploadModelsForRequestId = async (requestId) => {
   try {
-    console.log(`creating empty file uploads for requestId: ${requestId}`)
+    // console.log(`creating empty file uploads for requestId: ${requestId}`)
     return await fileUploadService.findOrCreateFileUpload(requestId)
     
   } catch (error) {
-    console.log(`Exception occured: ${error}`)
+    // console.log(`Exception occured: ${error}`)
     res.status(200).json({
       status: "failure",
       body: error,
