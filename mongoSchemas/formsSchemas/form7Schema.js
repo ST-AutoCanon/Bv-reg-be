@@ -46,11 +46,11 @@ const TyresSchema = mongoose.Schema({
   Rear_Tyre: {
     label: { type: String, default: "Rear Tyre" },
     properties: {
-      // Laden: {
-      //   value: { type: String, default: "" },
-      //   label: { type: String, default: " Rear Laden" },    
-      //   units: { type: String, default: "kg/cm² /kPa/ psi" },   
-      // },
+      Laden: {
+        value: { type: String, default: "" },
+        label: { type: String, default: " Rear Laden" },    
+        units: { type: String, default: "kg/cm² /kPa/ psi" },   
+      },
       Tyre_size_designation_including_ply_rating: {
         value: { type: String, default: "" },
         label: {
