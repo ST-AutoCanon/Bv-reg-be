@@ -17,7 +17,7 @@ const homologationRequestSchema = mongoose.Schema(
       default: 0,
     },
     vehicle_type: {
-      value: { type: String, required: true, enum: ["2-Wheeler", "3-Wheeler"] },
+      value: { type: String, required: true, enum: ["2-Wheeler", "3-Wheeler","Bus"] },
       label: { type: String, default: "Type of Vehicle" },
       order: { type: Number, default: 1 },
     },

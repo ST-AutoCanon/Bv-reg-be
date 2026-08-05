@@ -55,17 +55,34 @@ const NEW_SIGNIN_URL = process.env.NEW_SIGNIN_URL;
 const RESET_PASSWORD = process.env.RESET_PASSWORD;
 
 // ===================== Nodemailer Transport =====================
+// const transporter = nodemailer.createTransport({
+//   host: process.env.SMTP_HOST || "mail.pulsework.in",
+//   port: Number(process.env.SMTP_PORT) || 587,
+//   secure: false, // true for 465, false for other ports
+//   auth: {
+//     user: process.env.SMTP_USER || "info@sukalpatech.com",
+//     pass: process.env.SMTP_PASS || "SukalpaTech@2024",
+//   },
+//   tls: {
+//     rejectUnauthorized: false,
+//   },
+// });
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "mail.pulsework.in",
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false, // true for 465, false for other ports
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  secure: false, // use false for port 587
   auth: {
-    user: process.env.SMTP_USER || "info@sukalpatech.com",
-    pass: process.env.SMTP_PASS || "SukalpaTech@2024",
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
-  tls: {
-    rejectUnauthorized: false,
-  },
+});
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("SMTP Verify Error:", error);
+  } else {
+    console.log("✅ SMTP Server is Ready");
+    console.log(success);
+  }
 });
 
 // ===================== User Registration Mail =====================
