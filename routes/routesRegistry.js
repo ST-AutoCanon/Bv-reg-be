@@ -10,6 +10,7 @@ const { authenticateTokenMiddleWare } = require("../middleware/authMiddleware");
 const fileUploadController = require("../controllers/fileUploadController");
 const barrelRoutes = require("./formsRoutes")
 
+const busFormsRoutes = require("./BusformRoutes");
 // Multer configuration
 // Updated the file path to ensure it points to the correct directory for file storage
 const storage = multer.diskStorage({
@@ -36,6 +37,8 @@ exports.registerRoutes = async (app) => {
   app.use("/api/forms", formsDataRoutes);
   app.use("/api/files", formsDataRoutes);
   app.use("/api/barrels", barrelRoutes); // Add the barrelRoutes here
+
+  app.use("/api/bus-forms", busFormsRoutes);
   const upload = multer({
     storage: storage,
     // limits: { fileSize: 50 * 1024 * 1024 } // Set fileSize limit to 10MB
