@@ -1,0 +1,326 @@
+{
+  "6a703c82d52dcf76b6d5950b": {
+    "requestId": "6a703c82d52dcf76b6d5950b",
+    "formData": {
+      "manufacturerDetails": {
+        "1": {
+          "manufacturer": "new vehical manufacturer",
+          "manufacturerAddress": "Bangalore",
+          "telephone": "1234567890",
+          "fax": "1234567890",
+          "email": "test@yopmail.com",
+          "contactPerson": "sarika",
+          "modelVariant": "testbus"
+        },
+        "2": {
+          "manufacturer": "",
+          "manufacturerAddress": "",
+          "telephone": "",
+          "fax": "",
+          "email": "",
+          "contactPerson": "",
+          "modelVariant": ""
+        },
+        "3": {
+          "manufacturer": "",
+          "manufacturerAddress": "",
+          "telephone": "",
+          "fax": "",
+          "email": "",
+          "contactPerson": "",
+          "modelVariant": ""
+        }
+      },
+      "manufacturerPlantDetails": {
+        "manufacturer": "testbus",
+        "manufacturerAddress": "belgavi",
+        "telephone": "8779900678",
+        "fax": "1234",
+        "email": "test@gmail.com",
+        "contactPerson": "sarika",
+        "modelVariant": "testbus"
+      }
+    },
+    "updatedAt": "2026-08-26T04:58:54.576Z"
+  },
+  "6a87e3250ad79459da1bbcd3": {
+    "requestId": "6a87e3250ad79459da1bbcd3",
+    "formData": {
+      "manufacturerDetails": {
+        "1": {
+          "manufacturer": "",
+          "manufacturerAddress": "",
+          "telephone": "",
+          "fax": "",
+          "email": "",
+          "contactPerson": "",
+          "modelVariant": "",
+          "baseFuelType": ""
+        },
+        "2": {
+          "manufacturer": "",
+          "manufacturerAddress": "",
+          "telephone": "",
+          "fax": "",
+          "email": "",
+          "contactPerson": "",
+          "modelVariant": "",
+          "baseFuelType": ""
+        },
+        "3": {
+          "manufacturer": "",
+          "manufacturerAddress": "",
+          "telephone": "",
+          "fax": "",
+          "email": "",
+          "contactPerson": "",
+          "modelVariant": "",
+          "baseFuelType": ""
+        }
+      },
+      "vehicleBasicDetails": {
+        "1": {
+          "overallLength": "",
+          "totalLength": "",
+          "overallWidth": "",
+          "overallHeightUnladen": "",
+          "wheelBase": "",
+          "axleSpacing": "",
+          "wheelTrackFront": "",
+          "wheelTrackRear": "",
+          "wheelTrackOtherAxles": "",
+          "bodyOverhangFrontEnd": "",
+          "bodyOverhangRearEnd": "",
+          "frameOverhangFrontEnd": "",
+          "frameOverhangRearEnd": "",
+          "loadBodyDimensions": "",
+          "lateralProjection": "",
+          "cargoBoxLength": "",
+          "cargoBoxWidth": "",
+          "cargoBoxHeight": ""
+        },
+        "2": {
+          "overallLength": "",
+          "totalLength": "",
+          "overallWidth": "",
+          "overallHeightUnladen": "",
+          "wheelBase": "",
+          "axleSpacing": "",
+          "wheelTrackFront": "",
+          "wheelTrackRear": "",
+          "wheelTrackOtherAxles": "",
+          "bodyOverhangFrontEnd": "",
+          "bodyOverhangRearEnd": "",
+          "frameOverhangFrontEnd": "",
+          "frameOverhangRearEnd": "",
+          "loadBodyDimensions": "",
+          "lateralProjection": "",
+          "cargoBoxLength": "",
+          "cargoBoxWidth": "",
+          "cargoBoxHeight": ""
+        },
+        "3": {
+          "overallLength": "",
+          "totalLength": "",
+          "overallWidth": "",
+          "overallHeightUnladen": "",
+          "wheelBase": "",
+          "axleSpacing": "",
+          "wheelTrackFront": "",
+          "wheelTrackRear": "",
+          "wheelTrackOtherAxles": "",
+          "bodyOverhangFrontEnd": "",
+          "bodyOverhangRearEnd": "",
+          "frameOverhangFrontEnd": "",
+          "frameOverhangRearEnd": "",
+          "loadBodyDimensions": "",
+          "lateralProjection": "",
+          "cargoBoxLength": "",
+          "cargoBoxWidth": "",
+          "cargoBoxHeight": ""
+        }
+      },
+      "setting": {
+        "userName": "",
+        "emailId": "",
+        "contactNumber": "",
+        "companyName": "",
+        "vehicleType": "",
+        "language": ""
+      },
+      "documents": {
+        "documentName": "",
+        "documentNumber": "",
+        "documentType": "",
+        "issueDate": "",
+        "expiryDate": "",
+        "remarks": ""
+      },
+      "manufacturerPlantDetails": {
+        "1": {
+          "vehicleManufacturingPlant": "Test1",
+          "engineManufacturingPlant": "test1",
+          "importerNameAddress": "sarika",
+          "telephone": "1239870789",
+          "email": "sarika@yopmail.com",
+          "contactPerson": "1234567890",
+          "busBodyBuilderCategory": "testbus",
+          "zabCertificate": "Z123",
+          "nabCertificate": "N123",
+          "cmvrComplianceCertificate": "2234 31/7/2026"
+        },
+        "2": {
+          "vehicleManufacturingPlant": "",
+          "engineManufacturingPlant": "",
+          "importerNameAddress": "",
+          "telephone": "",
+          "email": "",
+          "contactPerson": "",
+          "busBodyBuilderCategory": "",
+          "zabCertificate": "",
+          "nabCertificate": "",
+          "cmvrComplianceCertificate": ""
+        },
+        "3": {
+          "vehicleManufacturingPlant": "",
+          "engineManufacturingPlant": "",
+          "importerNameAddress": "",
+          "telephone": "",
+          "email": "",
+          "contactPerson": "",
+          "busBodyBuilderCategory": "",
+          "zabCertificate": "",
+          "nabCertificate": "",
+          "cmvrComplianceCertificate": ""
+        }
+      },
+      "weighmentDetails": {
+        "1": {
+          "vehicleKerbWeight": "",
+          "frontAxle1": "",
+          "frontAxle2": "",
+          "rearAxle": "",
+          "trailerAxle": "",
+          "total": "",
+          "grossVehicleWeight": "",
+          "maximumPermissibleAxleWeightsFront": "",
+          "maximumPermissibleAxleWeightsRear": "",
+          "maximumPermissibleAxleWeightsOther": ""
+        },
+        "2": {
+          "vehicleKerbWeight": "",
+          "frontAxle1": "",
+          "frontAxle2": "",
+          "rearAxle": "",
+          "trailerAxle": "",
+          "total": "",
+          "grossVehicleWeight": "",
+          "maximumPermissibleAxleWeightsFront": "",
+          "maximumPermissibleAxleWeightsRear": "",
+          "maximumPermissibleAxleWeightsOther": ""
+        },
+        "3": {
+          "vehicleKerbWeight": "",
+          "frontAxle1": "",
+          "frontAxle2": "",
+          "rearAxle": "",
+          "trailerAxle": "",
+          "total": "",
+          "grossVehicleWeight": "",
+          "maximumPermissibleAxleWeightsFront": "",
+          "maximumPermissibleAxleWeightsRear": "",
+          "maximumPermissibleAxleWeightsOther": ""
+        }
+      },
+      "tyreAndWheelRim": {
+        "tyre": {
+          "make": "",
+          "brandTradeDescription": "",
+          "ais142Compliance": "",
+          "tyreRollingResistance": "",
+          "tyreClassFront": "",
+          "tyreClassRear": "",
+          "categoryOfUseFront": "",
+          "categoryOfUseRear": "",
+          "tyreTreadPatternDrawing": "",
+          "identification": "",
+          "wheelsFront": "",
+          "wheelsRear": "",
+          "spareWheel": "",
+          "otherWheels": "",
+          "tyreTypeFront": "",
+          "tyreTypeRear": "",
+          "spareWheelTyreType": "",
+          "otherTyreType": "",
+          "staticRollingRadius": "",
+          "dynamicRollingRadius": "",
+          "inflationPressureUnladenFront": "",
+          "inflationPressureUnladenRear": "",
+          "inflationPressureUnladenOther": "",
+          "inflationPressureLadenFront": "",
+          "inflationPressureLadenRear": "",
+          "inflationPressureLadenOther": ""
+        },
+        "wheelRim": {
+          "frontMake": "",
+          "frontBisLicenseNumber": "",
+          "frontPartNumber": "",
+          "frontSize": "",
+          "frontType": "",
+          "rearMake": "",
+          "rearBisLicenseNumber": "",
+          "rearPartNumber": "",
+          "rearSize": "",
+          "rearType": "",
+          "spareMake": "",
+          "spareBisLicenseNumber": "",
+          "sparePartNumber": "",
+          "spareSize": "",
+          "spareType": "",
+          "spareWheelType": "",
+          "speedIndexFront": "",
+          "speedIndexRear": "",
+          "speedIndexSpare": "",
+          "loadIndexFront": "",
+          "loadIndexRear": "",
+          "loadIndexSpare": "",
+          "tyreTypeFront": "",
+          "tyreTypeRear": "",
+          "tyreTypeSpare": ""
+        },
+        "wheelNut": {
+          "make": "",
+          "size": "",
+          "nosPerWheel": "",
+          "tighteningTorque": "",
+          "dimensionalDrawingMaterialSpecification": "",
+          "wheelCapDimensionalDrawing": "",
+          "hubCapMake": "",
+          "hubCapFitmentMethod": "",
+          "hubCapDimensionalDrawing": ""
+        },
+        "tpms": {
+          "makeDirectTPMS": "",
+          "systemDescriptionIndirectTPMS": "",
+          "sensorPartNumberDirectTPMS": "",
+          "temporarySpareWheelRFT": "",
+          "typeAsPerAIS110": "",
+          "make": "",
+          "size": "",
+          "loadAndSpeedRating": "",
+          "recommendedMaxSpeedUnladen": "",
+          "recommendedMaxSpeedLaden": ""
+        }
+      },
+      "notification": {
+        "notificationType": "",
+        "notificationTitle": "",
+        "notificationDate": "",
+        "notificationStatus": "",
+        "description": "",
+        "remarks": ""
+      }
+    },
+    "updatedAt": "2026-08-31T05:26:15.728Z"
+  }
+}
