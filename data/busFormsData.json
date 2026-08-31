@@ -158,16 +158,16 @@
       },
       "manufacturerPlantDetails": {
         "1": {
-          "vehicleManufacturingPlant": "",
-          "engineManufacturingPlant": "",
-          "importerNameAddress": "",
-          "telephone": "",
-          "email": "",
-          "contactPerson": "",
-          "busBodyBuilderCategory": "",
-          "zabCertificate": "",
-          "nabCertificate": "",
-          "cmvrComplianceCertificate": ""
+          "vehicleManufacturingPlant": "Test1",
+          "engineManufacturingPlant": "test1",
+          "importerNameAddress": "sarika",
+          "telephone": "1239870789",
+          "email": "sarika@yopmail.com",
+          "contactPerson": "1234567890",
+          "busBodyBuilderCategory": "testbus",
+          "zabCertificate": "Z123",
+          "nabCertificate": "N123",
+          "cmvrComplianceCertificate": "2234 31/7/2026"
         },
         "2": {
           "vehicleManufacturingPlant": "",
@@ -321,6 +321,6 @@
         "remarks": ""
       }
     },
-    "updatedAt": "2026-08-28T11:17:30.938Z"
+    "updatedAt": "2026-08-31T05:26:15.728Z"
   }
 }
