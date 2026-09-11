@@ -86,32 +86,79 @@ const homologationRequestSchema = mongoose.Schema(
 
 
 homologationRequestSchema.pre("validate", async function (next) {
-  // console.log("inside homologationRequestSchema.pre method")
-  const doc = this
-  let reqnumberPrefix
-  if (doc.isNew) {
-    if (doc.vehicle_type.value === "2-Wheeler") {
-      reqnumberPrefix = "2W"
-      if(doc.vehicle_max_speed.value === "Less than  70 kmph" || doc.vehicle_max_speed.value === "Less than  25 kmph") {
-        reqnumberPrefix = reqnumberPrefix +"L"
-      } else {
-        reqnumberPrefix = reqnumberPrefix+"H"
+  try {
+    const doc = this;
+
+    if (doc.isNew) {
+      let reqnumberPrefix;
+
+      // 2-Wheeler
+      if (doc.vehicle_type.value === "2-Wheeler") {
+        reqnumberPrefix = "2W";
+
+        if (
+          doc.vehicle_max_speed.value === "Less than  70 kmph" ||
+          doc.vehicle_max_speed.value === "Less than  25 kmph"
+        ) {
+          reqnumberPrefix += "L";
+        } else {
+          reqnumberPrefix += "H";
+        }
       }
-    } else {
-      reqnumberPrefix = "3W"
-      if(doc.vehicle_category.value == "E Rickshaw" || doc.vehicle_category.value == "L5M") {
-        reqnumberPrefix = reqnumberPrefix + "L5M"
-      } else {
-        reqnumberPrefix = reqnumberPrefix + "L5N"
+
+      // 3-Wheeler
+      else if (doc.vehicle_type.value === "3-Wheeler") {
+        reqnumberPrefix = "3W";
+
+        if (
+          doc.vehicle_category.value === "E Rickshaw" ||
+          doc.vehicle_category.value === "L5M"
+        ) {
+          reqnumberPrefix += "L5M";
+        } else {
+          reqnumberPrefix += "L5N";
+        }
       }
+
+      // Bus
+      else if (doc.vehicle_type.value === "Bus") {
+        reqnumberPrefix = "BUS";
+      }
+
+      const currentYear = new Date().getFullYear();
+
+      // Find the latest request number for this prefix and year
+      const lastRequest = await mongoose
+        .model("HomologationRequest")
+        .findOne({
+          request_number: {
+            $regex: `^${reqnumberPrefix}-${currentYear}-`,
+          },
+        })
+        .sort({ createdAt: -1 });
+
+      let nextNumber = 1;
+
+      if (lastRequest) {
+        const parts = lastRequest.request_number.split("-");
+        const lastNumber = parseInt(parts[parts.length - 1], 10);
+
+        if (!isNaN(lastNumber)) {
+          nextNumber = lastNumber + 1;
+        }
+      }
+
+      // 3 digit number: 001, 002, 003...
+      const formattedNumber = String(nextNumber).padStart(3, "0");
+
+      doc.request_number =
+        `${reqnumberPrefix}-${currentYear}-${formattedNumber}`;
     }
-    const currentYear = new Date().getFullYear()
-    const count = await mongoose.model("HomologationRequest").estimatedDocumentCount()
-    const requestNumber = count ? `${reqnumberPrefix}-${currentYear}-${count + 1}` : `${reqnumberPrefix}-${currentYear}-1`
-    // console.log(`requestNumber: ${requestNumber}`)
-    doc.request_number = requestNumber
+
+    next();
+  } catch (error) {
+    next(error);
   }
-  next()
-})
+});
 
 module.exports = mongoose.model("HomologationRequest",  homologationRequestSchema);
