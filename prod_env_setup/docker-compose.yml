@@ -1,4 +1,5 @@
 version: "3"
+# Production deployment configuration
 services:
   nginx:
     image: nginx:stable-alpine
