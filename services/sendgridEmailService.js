@@ -67,11 +67,7 @@ const RESET_PASSWORD = process.env.RESET_PASSWORD;
 //     rejectUnauthorized: false,
 //   },
 // });
-// console.log("SMTP HOST:", process.env.SMTP_HOST);
-// console.log("SMTP PORT:", process.env.SMTP_PORT);
-// console.log("SMTP USER:", process.env.SMTP_USER);
-// console.log("SMTP PASS EXISTS:", !!process.env.SMTP_PASSWORD);
-// console.log("SMTP PASS LENGTH:", process.env.SMTP_PASS?.length);
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),

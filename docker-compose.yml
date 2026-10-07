@@ -20,12 +20,12 @@ services:
       - /home/amogh/uploads:/app/uploads
     environment:
       PORT : 3001
-      MONGO_IP : mongo-db
+      MONGO_IP : 192.168.1.16
       MONGO_USER : mongo
       MONGO_PWD : mongo
       MONGO_PORT : 27017
-      ACCESS_TOKEN_SECRET : 41f0d950a8446b745b919bec8d3fe68e51a5e3c1ad2a7fe5c1dc2a0af12d09f08de7b5877f5d90c880a03dbdf479a719bb7ca58ec58d62cd392fa48c5088c23e
-      ADMIN_SIGNUP_TOKEN_SECRET: 37c2d99757b540ed55748fcf49d9924746bd
+      ACCESS_TOKEN_SECRET : f6e2666e74fa513206a88087df2cf81ea0e811df041cca2eac2bb6a05a4e69cef5ea7581f96a62eb635cc86db34e3d4dd14514dade95859aad3d88ba13ee1a48
+      ADMIN_SIGNUP_TOKEN_SECRET: e7db3d59f3df457f2d08d9e4a067ddbb5d3610aab15a5e88f4adfbcab024d9620d4bfb129f2efa5ad298debdc4e37414111dee4f774a55c272801d5c2ab649f9
       SENDGRID_API_KEY : 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
       NEW_SIGNIN_URL : https://bv-reg.com/NewSignin
       RESET_PASSWORD : https://bv-reg.com/ResetPassword
